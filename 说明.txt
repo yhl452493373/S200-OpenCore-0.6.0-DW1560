@@ -1,0 +1,8 @@
+1、主板解锁CFG，解锁方式参考文件夹【解锁CFG Lock】
+2、主板关闭CSM
+3、请勿启用任何形式的UI，包括OC官方的OpenCanopy.efi或者非官方的以及NDK版本，只是用官方版本的OC，且不使用UI界面的Picker(即Misc->Picker Mode设置为Builtin)
+4、请使用OpenCore Configurator编辑，编辑时，为官方正式版0.5.9。Ctrl + T可以打开其配置提示
+5、默认未加启动参数，需要的在NVRAM中自行添加
+6、PlatformInfo->DataHub中自行添加机型数据，机型必须为macmini8,1,System Serial Number、System UUID、ROM自行生成
+7、如果未扫描到你的磁盘启动项，请在Misc->Security->Scan Policy里修改扫描策略
+8、安装好进系统，系统偏好设置->节能，其中只开启当显示器关闭时，防止电脑自动进入睡眠

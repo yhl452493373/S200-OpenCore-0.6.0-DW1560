@@ -1,0 +1,42 @@
+详情请参考：https://www.misonsky.cn/115.html
+
+使用磁盘工具，把U盘抹掉，方案用主引导记录，格式选择MS-DOS（FAT）
+
+然后在U盘分区里新建一个EFI文件夹，EFI文件夹里新建一个BOOT文件夹，把下载的modGRUBShell.efi更名为BOOTX64.efi，放入BOOT文件夹里面。
+
+就这样，一个支持setup_var命令的grub引导启动盘就制作完成了。
+
+进BIOS里设置第一启动项为U盘（UEFI模式启动）。
+
+启动grub后，我们可以开始使用setup_var命令了。
+cfg
+disable 0x00
+enable 0x01
+setup_var_3 0x527 0x00
+
+dvmt
+0M 0x00
+32M 0x01
+64M 0x02
+4M 0xF0
+8M 0xF1
+12M 0xF2
+16M 0xF3
+20M 0xF4
+24M 0xF5
+28M 0xF6
+32M 0xF7
+36M 0xF8
+40M 0xF9
+44M 0xFA
+48M 0xFB
+52M 0xFC
+56M 0xFD
+60M 0xFE
+setup_var_3 0x800 0x02
+
+dvmt total gfx mem
+256M 0x02
+128M 0x01
+MAX 0x03
+setup_var_3 0x801 0x03
