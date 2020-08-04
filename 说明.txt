@@ -8,6 +8,11 @@ BIOS设置：关闭CSM
 ------------------------------------------------------------------------------------------
 现已支持big sur直装
 为实现big sur直装，config.plist里面已经不再设置csr-active-config，需要关闭SIP，请和白果一样，进recovery关闭
+catalina:
+recovery中，终端输入：csrutil disable，回车，重启即可
+bigsur:
+先执行catalina中命令，重启后再进入recovery，终端输入csrutil authenticated-root disable，回车即可
+bigsur中，由于使用了快照，因此即使关闭了sip，一样不能挂载系统分区，需要删除快照，具体参考http://bbs.pcbeta.com/viewthread-1863022-1-1.html
 ------------------------------------------------------------------------------------------
 big sur安装后，如果启动项里面是Preboot，可以进big sur中安装intel power gadget恢复磁盘名称
 ------------------------------------------------------------------------------------------
