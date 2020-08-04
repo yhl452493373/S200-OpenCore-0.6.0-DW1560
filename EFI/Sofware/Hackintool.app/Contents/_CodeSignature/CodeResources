@@ -26,7 +26,7 @@
 		</data>
 		<key>Resources/Assets.car</key>
 		<data>
-		j0UQ64Vo7YmnpVblyq4H+R/kLng=
+		QNRGibX+tFd7HcLxq2AHTHUKboE=
 		</data>
 		<key>Resources/Audio/Codecs.plist</key>
 		<data>
@@ -52,6 +52,10 @@
 		<data>
 		j49ISJMgH3i0tShYFfQ3+HJOS7M=
 		</data>
+		<key>Resources/BT/IntelDevice.plist</key>
+		<data>
+		Rd1bfa1VuL1VY6avOA5pmEA5r9A=
+		</data>
 		<key>Resources/BannerEveryMac.png</key>
 		<data>
 		78v//ADHjMPz/Gb42pMXURv/tVs=
@@ -62,7 +66,7 @@
 		</data>
 		<key>Resources/Base.lproj/MainMenu.nib</key>
 		<data>
-		iSFXgnkGZ1+aX7cQK1PZJdnerFo=
+		Ppc6fz3NgAhEGoGv3p/x/qDDqzY=
 		</data>
 		<key>Resources/Clover/config_patches.plist</key>
 		<data>
@@ -1142,7 +1146,7 @@
 		</data>
 		<key>Resources/Kexts/kexts.plist</key>
 		<data>
-		ZIpk3E2T/qOrMEWkJ+fbI6bGyZY=
+		Lh8SeVqpEjHsTAbo7c+sP86f/X4=
 		</data>
 		<key>Resources/OpenCore/config.plist</key>
 		<data>
@@ -1159,6 +1163,10 @@
 		<key>Resources/USB/config_patches.plist</key>
 		<data>
 		YHBpLyHex1VjKdK5XSb7TxAH+5c=
+		</data>
+		<key>Resources/USB/usb.ids</key>
+		<data>
+		P+iRFr0gAEvDygdtviBfxINRc7o=
 		</data>
 		<key>Resources/Utilities/iasl</key>
 		<data>
@@ -1328,11 +1336,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			j0UQ64Vo7YmnpVblyq4H+R/kLng=
+			QNRGibX+tFd7HcLxq2AHTHUKboE=
 			</data>
 			<key>hash2</key>
 			<data>
-			6dxUpSQEiWZoNLsblT7fZGbpaS1jov7X9afFBExhiUk=
+			PggPqPo6twy/HAI1f96yuHxmCqSuGHeawp1rf836tvE=
 			</data>
 		</dict>
 		<key>Resources/Audio/Codecs.plist</key>
@@ -1401,6 +1409,17 @@
 			d0tT0q/HksuvXxNM/AB9S4QGTI9SJPq6BOxe5ati57Y=
 			</data>
 		</dict>
+		<key>Resources/BT/IntelDevice.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Rd1bfa1VuL1VY6avOA5pmEA5r9A=
+			</data>
+			<key>hash2</key>
+			<data>
+			up6nZ3zLfBYkqoyrXdKtgsH8kMf09jqImLdQUN5V1ZI=
+			</data>
+		</dict>
 		<key>Resources/BannerEveryMac.png</key>
 		<dict>
 			<key>hash</key>
@@ -1427,11 +1446,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			iSFXgnkGZ1+aX7cQK1PZJdnerFo=
+			Ppc6fz3NgAhEGoGv3p/x/qDDqzY=
 			</data>
 			<key>hash2</key>
 			<data>
-			fgkxAwyl/OUz20khPeRxVHeGqZRdwOc63RMEKBHlriE=
+			wHt9e/jwrMq0rL7ohhgXNQTDNfQJE1lTdqUn7CpTDvs=
 			</data>
 		</dict>
 		<key>Resources/Clover/config_patches.plist</key>
@@ -4115,11 +4134,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ZIpk3E2T/qOrMEWkJ+fbI6bGyZY=
+			Lh8SeVqpEjHsTAbo7c+sP86f/X4=
 			</data>
 			<key>hash2</key>
 			<data>
-			C8wJ2RX2LuPtyxgcZE6Q9O5b9SZD78zLapM2Rs1aQP0=
+			b/+1qmo4ZVdeR8j5xmPbqoDwKNvmuUFiC7pY+wrBt4c=
 			</data>
 		</dict>
 		<key>Resources/OpenCore/config.plist</key>
@@ -4164,6 +4183,17 @@
 			<key>hash2</key>
 			<data>
 			ozTQ9sKgkQMGimDXlikGP/GUIGM3eLhsF8x24HX49fI=
+			</data>
+		</dict>
+		<key>Resources/USB/usb.ids</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			P+iRFr0gAEvDygdtviBfxINRc7o=
+			</data>
+			<key>hash2</key>
+			<data>
+			X2QtJw2QDWqTFHpCKqrHaTDhfdqV6yMjKJCouffPlX4=
 			</data>
 		</dict>
 		<key>Resources/Utilities/iasl</key>

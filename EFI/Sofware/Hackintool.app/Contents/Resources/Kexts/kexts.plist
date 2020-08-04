@@ -523,14 +523,14 @@
 		<string>https://github.com/acidanthera/NVMeFix</string>
 		<key>Type</key>
 		<string>Lilu</string>
-	</dict>	
+	</dict>
 	<dict>
 		<key>Name</key>
 		<string>IntelBluetoothFirmware</string>
 		<key>Description</key>
 		<string>Try to load the Intel Bluetooth driver firmware.</string>
 		<key>ProjectUrl</key>
-		<string>https://github.com/zxystd/IntelBluetoothFirmware</string>
+		<string>https://github.com/OpenIntelWireless/IntelBluetoothFirmware</string>
 		<key>Type</key>
 		<string>Kext</string>
 	</dict>
@@ -538,9 +538,21 @@
 		<key>Name</key>
 		<string>AppleIntelWifiAdapter</string>
 		<key>Description</key>
-		<string>Apple IO80211Controller call. Research on Apple's undisclosed AirPort program. Currently based on 10.15 api.</string>
+		<string>Apple IO80211Controller call. Research on Apple&apos;s undisclosed AirPort program. Currently based on 10.15 api.</string>
 		<key>ProjectUrl</key>
 		<string>https://github.com/zxystd/AppleIntelWifiAdapter</string>
+		<key>Type</key>
+		<string>Kext</string>
+		<key>Superseder</key>
+		<string>itlwm</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>itlwm</string>
+		<key>Description</key>
+		<string>OpenBSD based macOS Intel network card driver.</string>
+		<key>ProjectUrl</key>
+		<string>https://github.com/OpenIntelWireless/itlwm</string>
 		<key>Type</key>
 		<string>Kext</string>
 	</dict>
