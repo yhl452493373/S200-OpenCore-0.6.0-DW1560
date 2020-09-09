@@ -131,7 +131,7 @@
 /* Class = "NSButton"; ibShadowedToolTip = "Type: plist boolean\nFailsafe: false\nDescription: Reinstalls Apple Image Conversion protocol with a builtin version."; ObjectID = "ILy-av-YYi"; */
 "ILy-av-YYi.ibShadowedToolTip" = "重建apple图标，一般选择NO。";
 
-/* Class = "NSTabViewItem"; label = "Protocols"; ObjectID = "Ife-ug-MJ5"; */
+/* Class = "NSTabViewItem"; label = "ProtocolOverrides"; ObjectID = "Ife-ug-MJ5"; */
 "Ife-ug-MJ5.label" = "协议覆盖";
 
 /* Class = "NSButton"; ibShadowedToolTip = "Type: plist boolean\nFailsafe: false\nDescription: Reinstalls Apple Debug Log protocol with a builtin version."; ObjectID = "JLv-Tn-pJQ"; */
@@ -194,6 +194,9 @@
 /* Class = "NSTabViewItem"; label = "Drivers"; ObjectID = "V9Z-z9-Ejd"; */
 "V9Z-z9-Ejd.label" = "UEFI驱动";
 
+/* Class = "NSButton"; ibShadowedToolTip = "Type: plist boolean\nFailsafe: false\nDescription: Reinstalls Apple IMG4 Verification protocol with a builtin version. This protocol is used to verify im4m manifest files used by Apple Secure Boot."; ObjectID = "XQL-ML-llQ"; */
+"XQL-ML-llQ.ibShadowedToolTip" = "重新安装具有内置版本的Apple IMG4 Verification协议。 此协议用于验证Apple Secure Boot使用的im4m清单文件。";
+
 /* Class = "NSButtonCell"; title = "AppleRtcRam"; ObjectID = "Xjp-N3-zFD"; */
 "Xjp-N3-zFD.title" = "AppleRtcRam";
 
@@ -242,7 +245,7 @@
 /* Class = "NSButton"; ibShadowedToolTip = "Type: plist boolean\nFailsafe: false\nDescription: Enable internal pointer driver.\nThis option implements standard UEFI pointer protocol (EFI_SIMPLE_POINTER_PROTOCOL) through select OEM protocols. The option may be useful on Z87 ASUS boards, where EFI_SIMPLE_POINTER_PROTOCOL is broken."; ObjectID = "dzp-p6-AHb"; */
 "dzp-p6-AHb.ibShadowedToolTip" = "如果你是华硕的z87或者z97，你需要打开PointerSupport这个选项。";
 
-/* Class = "NSButton"; ibShadowedToolTip = "Type: plist boolean\nFailsafe: false\nDescription: Ensure GOP (Graphics Output Protocol) on console handle.\nmacOS bootloader requires GOP to be present on console handle, yet the exact location of GOP is not covered by the UEFI specification. This option will ensure GOP is installed on console handle if it is present.\n\nNote: This option will also replace broken GOP protocol on console handle, which may be the case on MacPro5,1 with newer GPUs."; ObjectID = "eGd-xS-rQf"; */
+/* Class = "NSButton"; ibShadowedToolTip = "Type: plist boolean\nFailsafe: false\nDescription: Ensure GOP (Graphics Output Protocol) on console handle.\nmacOS bootloader requires GOP or UGA (for 10.4 EfiBoot) to be present on console handle, yet the exact location of  the graphics protocol is not covered by the UEFI specification. This option will ensure GOP and UGA, if present, are available on the console handle.\n\nNote: This option will also replace broken GOP protocol on console handle, which may be the case on MacPro5,1 with newer GPUs."; ObjectID = "eGd-xS-rQf"; */
 "eGd-xS-rQf.ibShadowedToolTip" = "macOS 引导加载程序要求 GOP (图形输出协议) 存在于控制台句柄上\n大部分的笔记本都不提供 GOP, 台式机的独立显卡可以单独刷入 GOP\n如果选择了啰嗦模式启动之后不出现Verbose详细信息，请启用此项\n开启此选项能最大可能保证 OpenCore UI 和 苹果标志 以正确分辨率显示";
 
 /* Class = "NSButtonCell"; title = "HideVerbose"; ObjectID = "egr-8J-RIS"; */
@@ -262,6 +265,9 @@
 
 /* Class = "NSTextField"; ibShadowedToolTip = "Type: plist integer\nFailsafe: 0\nDescription: Set architecture timer resolution.\nThis option allows to update firmware architecture timer period with the specified value in 100 nanosecond units. Setting a lower value generally improves performance and responsiveness of the interface and input handling.\nThe recommended value is 50000 (5 milliseconds) or slightly higher. Select ASUS Z87 boards use 60000 for the interface. Apple boards use 100000. You may leave it as 0 in case there are issues."; ObjectID = "fda-QM-Vl4"; */
 "fda-QM-Vl4.ibShadowedToolTip" = "固件时钟刷新的频率 (单位: 100纳秒)\n华硕主板为自己的界面使用 60000\n苹果使用 100000";
+
+/* Class = "NSButtonCell"; title = "AppleSecureBoot"; ObjectID = "gC4-eW-BlL"; */
+"gC4-eW-BlL.title" = "AppleSecureBoot";
 
 /* Class = "NSTabViewItem"; label = "Output"; ObjectID = "gJG-UT-7D3"; */
 "gJG-UT-7D3.label" = "显示输出";
@@ -317,7 +323,7 @@
 /* Class = "NSComboBox"; ibShadowedToolTip = "Type: plist string \nFailsafe: Empty string \nDescription: Sets console output mode as specified with the WxH (e.g. 80x24) formatted string.\nSet to empty string not to change console mode. Set to Max to try to use largest available console mode. Currently Builtin text renderer supports only one console mode, so this option is ignored.\n\nNote: This field is best to be left empty on most firmwares."; ObjectID = "lye-vu-fi3"; Note = "Do Not Translate"; */
 "lye-vu-fi3.ibShadowedToolTip" = "设置为空字符串不更改控制台模式.设置为Max以尝试使用最大可用控制台模式.\n大多数情况下都选择留空！";
 
-/* Class = "NSPopUpButton"; ibShadowedToolTip = "Type: plist string\nFailsafe: BuiltinGraphics\nDescription: Chooses renderer for text going through standard console output.\nCurrently two renderers are supported: Builtin and System. System renderer uses firmware services for text rendering. Builtin bypassing firmware services and performs text rendering on its own. Different renderers support a different set of options. It is recommended to use Builtin renderer, as it supports HiDPI mode and uses full screen resolution.\nUEFI firmwares generally support ConsoleControl with two rendering modes: Graphics and Text. Some firmwares do not support ConsoleControl and rendering modes. OpenCore and macOS expect text to only be shown in Graphics mode and graphics to be drawn in any mode. Since this is not required by UEFI specification, exact behaviour varies.\nValid values are combinations of text renderer and rendering mode:\n• BuiltinGraphics — Switch to Graphics mode and use Builtin renderer with custom ConsoleControl.\n• SystemGraphics — Switch to Graphics mode and use System renderer with custom ConsoleControl.\n• SystemText — Switch to Text mode and use System renderer with custom ConsoleControl.\n• SystemGeneric — Use System renderer with system ConsoleControl assuming it behaves correctly.\nThe use of BuiltinGraphics is generally straightforward. For most platforms it is necessary to enable ProvideConsoleGop, set Resolution to Max, and optionally configure Scale.\nThe use of System protocols is more complicated. In general the preferred setting is SystemGraphics or SystemText. Enabling ProvideConsoleGop, setting Resolution to Max, enabling ReplaceTabWithSpace is useful on almost all platforms. SanitiseClearScreen, IgnoreTextInGraphics, and ClearScreenOnModeSwitch are more specific, and their use depends on the firmware.\n\nNote: Some Macs, namely MacPro5,1, may have broken console output with newer GPUs, and thus only BuiltinGraphics may work for them."; ObjectID = "mlh-hW-OqT"; */
+/* Class = "NSPopUpButton"; ibShadowedToolTip = "Type: plist string\nFailsafe: BuiltinGraphics\nDescription: Chooses renderer for text going through standard console output.\nCurrently two renderers are supported: Builtin and System. System renderer uses firmware services for text rendering. Builtin bypassing firmware services and performs text rendering on its own. Different renderers support a different set of options. It is recommended to use Builtin renderer, as it supports HiDPI mode and uses full screen resolution.\nUEFI firmwares generally support ConsoleControl with two rendering modes: Graphics and Text. Some firmwares do not support ConsoleControl and rendering modes. OpenCore and macOS expect text to only be shown in Graphics mode and graphics to be drawn in any mode. Since this is not required by UEFI specification, exact behaviour varies.\nValid values are combinations of text renderer and rendering mode:\n• BuiltinGraphics — Switch to Graphics mode and use Builtin renderer with custom ConsoleControl.\n• BuiltinText — Switch to Text mode and use Builtin renderer with custom ConsoleControl.\n• SystemGraphics — Switch to Graphics mode and use System renderer with custom ConsoleControl.\n• SystemText — Switch to Text mode and use System renderer with custom ConsoleControl.\n• SystemGeneric — Use System renderer with system ConsoleControl assuming it behaves correctly.\n\nThe use of BuiltinGraphics is generally straightforward. For most platforms it is necessary to enable ProvideConsoleGop, set Resolution to Max. BuiltinText variant is an alternative BuiltinGraphics for some very old and buggy laptop firmwares, which can only draw in Text mode.\n\nThe use of System protocols is more complicated. In general the preferred setting is SystemGraphics or SystemText. Enabling ProvideConsoleGop, setting Resolution to Max, enabling ReplaceTabWithSpace is useful on almost all platforms. SanitiseClearScreen, IgnoreTextInGraphics, and ClearScreenOnModeSwitch are more specific, and their use depends on the firmware.\n\nNote: Some Macs, namely MacPro5,1, may have broken console output with newer GPUs, and thus only BuiltinGraphics may work for them."; ObjectID = "mlh-hW-OqT"; */
 "mlh-hW-OqT.ibShadowedToolTip" = "为通过标准控制台输出的文本选择渲染器。\n目前支持两个渲染器: Builtin 和 System. System渲染器使用主板固件自带文字渲染进行文本渲染。 Builtin则绕过固件服务，使用 OpenCore 内置文字渲染执行文本渲染。 不同的渲染器支持不同的选项集。建议使用内置渲染器，因为它支持HiDPI模式并使用全屏分辨率。\n选项内容是文本渲染器和渲染模式的组合:\n• BuiltinGraphics — 使用 OpenCore 内置文字渲染的图形模式, 并同时启用 OpenCore 自带的控制台管理, 支持 HIDPI 和全屏范围显示, 通常效果胜于下面的选项。\n• SystemGraphics — 使用主板固件自带文字渲染的图形模式, 并同时启用 OpenCore 自带的控制台管理。\n• SystemText — 使用主板固件自带文字渲染的文字模式, 并同时启用 OpenCore 自带的控制台管理。\n• SystemGeneric — 使用主板固件自带文字渲染的文字模式和自带的控制台管理。\nBuiltinGraphics的使用通常很简单。对于大多数平台，必须启用ProvideConsoleGop，将分辨率选项设置为Max，并选择配置Scale。\n系统协议的使用更加复杂。通常，首选设置是SystemGraphics或SystemText。启用ProvideConsoleGop，将“分辨率”设置为“最大”，启用“ReplaceTabWithSpace”在几乎所有平台上都很有用。 SanitiseClearScreen，IgnoreTextInGraphics和ClearScreenOnModeSwitch更具体，它们的使用取决于固件。\n\n注意:某些Mac机型，比如MacPro5,1，可能在较新的GPU上的控制台输出已损坏，因此只有BuiltinGraphics可以为它们工作。";
 
 /* Class = "NSTableColumn"; headerCell.title = "Enabled"; ObjectID = "n2P-We-NTM"; */
@@ -335,7 +341,7 @@
 /* Class = "NSButtonCell"; title = "AudioSupport"; ObjectID = "oT1-Q2-rhc"; */
 "oT1-Q2-rhc.title" = "AudioSupport";
 
-/* Class = "NSButton"; ibShadowedToolTip = "Type: plist boolean\nFailsafe: false\nDescription: Some firmwares clear only part of screen when switching from graphics to text mode, leaving a fragment of previously drawn image visible. This option fills the entire graphics screen with black color before switching to text mode.\n\nNote: This option only applies to System renderer."; ObjectID = "qMh-AF-g0P"; */
+/* Class = "NSButton"; ibShadowedToolTip = "Type: plist boolean\nFailsafe: false\nDescription: Some firmwares clear only part of screen when switching from graphics to text mode, leaving a fragment of previously drawn image visible. This option fills the entire graphics screen with black colour before switching to text mode.\n\nNote: This option only applies to System renderer."; ObjectID = "qMh-AF-g0P"; */
 "qMh-AF-g0P.ibShadowedToolTip" = "图形模式切换到文本模式时，某些固件仅清除屏幕的一部分，使先前绘制的图像片段可见。 此选项在切换到文本模式之前用黑色填充整个图形屏幕。\n注意:此选项仅适用于系统渲染器才能起作用。";
 
 /* Class = "NSButton"; ibShadowedToolTip = "Type: plist boolean\nFailsafe: false \nDescription: Reinstalls Apple RTC RAM protocol with builtin version.\n\nNote: Builtin version of Apple RTC RAM protocol may filter out I/O attempts to select RTC memory addresses. \nThe list of addresses can be specified in 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:rtc-blacklist variable as a data array."; ObjectID = "r1b-ma-oOs"; */
@@ -365,6 +371,9 @@
 /* Class = "NSButtonCell"; title = "ClearScreenOnModeSwitch"; ObjectID = "tqx-Ek-u4V"; */
 "tqx-Ek-u4V.title" = "ClearScreenOnModeSwitch";
 
+/* Class = "NSButton"; ibShadowedToolTip = "Type: plist boolean\nFailsafe: false\nDescription: Reinstalls Apple Secure Boot protocol with a builtin version."; ObjectID = "ub5-qQ-fLN"; */
+"ub5-qQ-fLN.ibShadowedToolTip" = "重新安装具有内置版本的Apple Secure Boot协议。";
+
 /* Class = "NSTableColumn"; headerCell.title = "Size"; ObjectID = "ufL-Er-oh9"; */
 "ufL-Er-oh9.headerCell.title" = "大小";
 
@@ -377,7 +386,7 @@
 /* Class = "NSTextFieldCell"; title = "ExitBootServicesDelay"; ObjectID = "wxD-TC-lrQ"; */
 "wxD-TC-lrQ.title" = "ExitBootServicesDelay";
 
-/* Class = "NSTextField"; ibShadowedToolTip = "Type: plist integer\nFailsafe: 0\nDescription: Remove key unless it was submitted during this timeout in milliseconds.\nAppleKeyMapAggregator protocol is supposed to contain a fixed length buffer of currently pressed keys. However, the majority of the drivers only report key presses as interrupts and pressing and holding the key on the keyboard results in subsequent submissions of this key with some defined time interval. As a result we use a timeout to remove once pressed keys from the buffer once the timeout expires and no new submission of this key happened.\nThis option allows to set this timeout based on your platform. The recommended value that works on the majority of the platforms is 5 milliseconds. For reference, holding one key on VMware will repeat it roughly every 2 milliseconds and the same value for APTIO V is 3-4 milliseconds. Thus it is possible to set a slightly lower value on faster platforms and slightly higher value on slower platforms for more responsive input."; ObjectID = "xNH-9V-3kd"; */
+/* Class = "NSTextField"; ibShadowedToolTip = "Type: plist integer\nFailsafe: 0\nDescription: Remove key unless it was submitted during this timeout in milliseconds.\nAppleKeyMapAggregator protocol is supposed to contain a fixed length buffer of currently pressed keys. However, the majority of the drivers only report key presses as interrupts and pressing and holding the key on the keyboard results in subsequent submissions of this key with some defined time interval. As a result we use a timeout to remove once pressed keys from the buffer once the timeout expires and no new submission of this key happened.\nThis option allows to set this timeout based on your platform. The recommended value that works on the majority of the platforms is 5 milliseconds. For reference, holding one key on VMware will repeat it roughly every 2 milliseconds and the same value for APTIO V is 3-4 milliseconds. Thus it is possible to set a slightly lower value on faster platforms and slightly higher value on slower platforms for more responsive input.\n\nNote: Some platforms may require different values, higher or lower. For example, when detecting key misses in OpenCanopy try increasing this value (e.g. to 10), and when detecting key stall, try decreasing this value. Since every platform is different it may be reasonable to check every value from 1 to 25."; ObjectID = "xNH-9V-3kd"; */
 "xNH-9V-3kd.ibShadowedToolTip" = "按住按键后每个键之间的时间间隔 (单位: 毫秒)\n此选项允许根据您的平台设置此超时。 在大多数平台上均可使用的建议值为5毫秒。 作为参考，在VMware上按住一个键大约每2毫秒重复一次，而APTIO V的相同值是3-4毫秒。 因此，可以在较快的平台上设置稍低的值，而在较慢的平台上设置稍高的值，以提高响应速度。";
 
 /* Class = "NSTextField"; ibShadowedToolTip = "Type: plist integer\nDefault value: 0\nDescription: Adds delay in microseconds after EXIT_BOOT_SERVICES event.\nThis is a very ugly quirk to circumvent \"Still waiting for root device\" message on select APTIO IV firmwares, namely ASUS Z87-Pro, when using FileVault 2 in particular. It seems that for some reason they execute code in parallel to EXIT_BOOT_SERVICES, which results in SATA controller being inaccessible from macOS. A better approach should be found in some future. Expect 3-5 seconds to be enough in case the quirk is needed."; ObjectID = "yXm-Kd-A6O"; */
@@ -385,6 +394,9 @@
 
 /* Class = "NSButtonCell"; title = "IgnoreTextInGraphics"; ObjectID = "ygR-oy-xAC"; */
 "ygR-oy-xAC.title" = "IgnoreTextInGraphics";
+
+/* Class = "NSButtonCell"; title = "AppleImg4Verification"; ObjectID = "ytA-jO-wqX"; */
+"ytA-jO-wqX.title" = "AppleImg4Verification";
 
 /* Class = "NSButtonCell"; title = "ReconnectOnResChange"; ObjectID = "zen-LP-Fan"; */
 "zen-LP-Fan.title" = "ReconnectOnResChange";
