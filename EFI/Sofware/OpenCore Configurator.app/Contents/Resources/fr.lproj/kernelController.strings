@@ -47,6 +47,9 @@
 /* Class = "NSButton"; ibShadowedToolTip = "Type: plist boolean\nFailsafe: false\nRequirement: 10.10\nDescription: Increases 32-bit PCI bar size in IOPCIFamily from 1 to 4 GBs.\nNote: This option should be avoided whenever possible. In general the necessity of this option means misconfigured or broken firmware."; ObjectID = "8Db-Hu-t2R"; */
 "8Db-Hu-t2R.ibShadowedToolTip" = "Résolvez la configuration PCI de la carte. Si vous la rencontrez, sélectionnez oui, et généralement non. \nNotez que la configuration générale de la carte PCI est due à un mauvais réglage ou à un problème matériel. \nActiver Above4GDecoding dans le BIOS est une méthode plus propre et plus sûre. Certaines cartes X99 peuvent devoir être allumées, ces cartes subissent généralement des plantages du noyau sur IOPCIFamily";
 
+/* Class = "NSButtonCell"; title = "Download/Update kexts"; ObjectID = "8LM-uC-YZk"; */
+"8LM-uC-YZk.title" = "Download/Update kexts";
+
 /* Class = "NSTableColumn"; headerCell.title = "Arch"; ObjectID = "8Qp-io-xPv"; */
 "8Qp-io-xPv.headerCell.title" = "Arch";
 
@@ -112,6 +115,9 @@
 
 /* Class = "NSTableColumn"; headerCell.title = "Comment"; ObjectID = "Ntg-7A-K1a"; */
 "Ntg-7A-K1a.headerCell.title" = "Comment";
+
+/* Class = "NSButtonCell"; title = "DisableLinkeditJettison"; ObjectID = "OSa-QT-Lhq"; */
+"OSa-QT-Lhq.title" = "DisableLinkeditJettison";
 
 /* Class = "NSTableColumn"; headerCell.title = "BundlePath*"; ObjectID = "Oe6-LD-h7w"; */
 "Oe6-LD-h7w.headerCell.title" = "Chemin du paquet *";
@@ -214,6 +220,9 @@
 
 /* Class = "NSTableColumn"; headerCell.title = "Comment"; ObjectID = "kGJ-yd-xi8"; */
 "kGJ-yd-xi8.headerCell.title" = "Commentaire";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Type: plist boolean\nFailsafe: false\nRequirement: 11.0\nDescription: Disables __LINKEDIT jettison code.\n\nThis option lets Lilu.kext and possibly some others function in macOS Big Sur with best performance without keepsyms=1 boot argument."; ObjectID = "koV-S4-Tkn"; */
+"koV-S4-Tkn.ibShadowedToolTip" = "Type: plist boolean\nFailsafe: false\nRequirement: 11.0\nDescription: Disables __LINKEDIT jettison code.\n\nThis option lets Lilu.kext and possibly some others function in macOS Big Sur with best performance without keepsyms=1 boot argument.";
 
 /* Class = "NSTableColumn"; headerCell.title = "ReplaceMask"; ObjectID = "lAD-ms-SMV"; */
 "lAD-ms-SMV.headerCell.title" = "Remplacer le masque";
