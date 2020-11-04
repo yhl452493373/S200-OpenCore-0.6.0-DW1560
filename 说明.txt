@@ -4,7 +4,11 @@ DW1560
 I7 8850H
 4K显示器，带mini dp和hdmi2.0
 ------------------------------------------------------------------------------------------
-BIOS设置：关闭CSM
+
+BIOS设置：
+Boot - CSM Configuration - CSM Support [ Enable ]
+                         - Boot option filter [ UEFI only ]
+
 ------------------------------------------------------------------------------------------
 现已支持big sur直装
 为实现big sur直装，config.plist里面已经不再设置csr-active-config，需要关闭SIP，请和白果一样，进recovery关闭
@@ -15,6 +19,7 @@ bigsur:
 bigsur中，由于使用了快照，因此即使关闭了sip，一样不能挂载系统分区，需要删除快照，具体参考http://bbs.pcbeta.com/viewthread-1863022-1-1.html
 
 如果要取消log显示，则去掉启动参数中的【-v 】，注意-v后面的空格也要删除
+如果要隐藏开机时的启动项选择器，则把 config.plist 中 Show Picker 改为False
 ------------------------------------------------------------------------------------------
 0、安装前请先清空nvram（主要是去掉csr-active-config）
 1、自行补齐机型数据
