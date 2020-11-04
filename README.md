@@ -1,4 +1,4 @@
-# S200-OpenCore-0.6.1-DW1560
+# S200-OpenCore-0.6.3-DW1560
 S200 Hackintosh
 
 i7-8850h
